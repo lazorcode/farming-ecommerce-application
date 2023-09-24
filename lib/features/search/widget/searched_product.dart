@@ -22,16 +22,30 @@ class SearchedProduct extends StatelessWidget {
     return Column(
       children: [
         Container(
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(color: Colors.black12)),
           margin: const EdgeInsets.symmetric(
             horizontal: 10,
           ),
           child: Row(
             children: [
-              Image.network(
-                product.images[0],
-                fit: BoxFit.contain,
-                height: 135,
-                width: 130,
+              Container(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(color: Colors.black12)),
+                child: Padding(
+                  padding: const EdgeInsets.all(2.0),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.network(
+                      product.images[0],
+                      fit: BoxFit.cover,
+                      height: 135,
+                      width: 130,
+                    ),
+                  ),
+                ),
               ),
               SizedBox(
                 width: 200,

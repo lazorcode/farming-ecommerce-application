@@ -53,47 +53,75 @@ class _DealOfDayState extends State<DealOfDay> {
                             fontSize: 20, fontWeight: FontWeight.w500),
                       ),
                     ),
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    Image.network(
-                      product!.images[0],
-                      height: 235,
-                      fit: BoxFit.cover,
-                    ),
-                    Container(
-                      padding: const EdgeInsets.only(left: 15),
-                      alignment: Alignment.topLeft,
-                      child: const Text(
-                        '\$100',
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.w600),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: Colors.black12)),
+                        child: Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: Image.network(
+                              product!.images[0],
+                              height: 215,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
                       ),
                     ),
                     Container(
+                        padding: const EdgeInsets.only(left: 15),
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          '\$${product!.price}',
+                          style: const TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          maxLines: 2,
+                        )),
+                    Container(
                       alignment: Alignment.topLeft,
-                      padding:
-                          const EdgeInsets.only(left: 15, top: 5, right: 40),
-                      child: const Text(
-                        'Aman',
+                      padding: const EdgeInsets.only(left: 15, right: 40),
+                      child: Text(
+                        product!.name,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: product!.images
-                            .map(
-                              (e) => Image.network(
-                                e,
-                                fit: BoxFit.cover,
-                                width: 100,
-                                height: 100,
-                              ),
-                            )
-                            .toList(),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                          border: Border.all(color: Colors.black12),
+                          borderRadius: BorderRadius.circular(10)),
+                      child: SingleChildScrollView(
+                        physics: const BouncingScrollPhysics(),
+                        padding: const EdgeInsets.symmetric(horizontal: 5),
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: product!.images
+                              .map(
+                                (e) => Padding(
+                                  padding: const EdgeInsets.all(4.0),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(5),
+                                    child: Image.network(
+                                      e,
+                                      fit: BoxFit.cover,
+                                      width: 100,
+                                      height: 100,
+                                    ),
+                                  ),
+                                ),
+                              )
+                              .toList(),
+                        ),
                       ),
                     ),
                     Container(

@@ -79,9 +79,10 @@ class _HomeScreenState extends State<HomeScreen> {
           )),
       // ignore: prefer_const_constructors
       body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         child: const Column(
           children: [
-            AddressBox(),
+            // AddressBox(),
             SizedBox(
               height: 10,
             ),

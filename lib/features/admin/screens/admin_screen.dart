@@ -1,4 +1,7 @@
 import 'package:ecommerce/constants/global_variables.dart';
+import 'package:ecommerce/features/account/services/account_services.dart';
+import 'package:ecommerce/features/account/widgets/account_button.dart';
+import 'package:ecommerce/features/account/widgets/top_buttons.dart';
 import 'package:ecommerce/features/admin/screens/analytics_screen.dart';
 import 'package:ecommerce/features/admin/screens/orders_screen.dart';
 import 'package:ecommerce/features/admin/screens/posts_screen.dart';
@@ -48,6 +51,9 @@ class _AdminScreenState extends State<AdminScreen> {
                       height: 55,
                       color: Colors.black,
                     )),
+                AccountButton(
+                    text: 'Log Out',
+                    onTap: () => AccountServices().logOut(context)),
                 const Text(
                   'Admin',
                   style: TextStyle(
@@ -77,7 +83,7 @@ class _AdminScreenState extends State<AdminScreen> {
                             width: bottomBarBorderWidth))),
                 child: const Icon(Icons.home_outlined),
               ),
-              label: ''),
+              label: 'Home'),
           BottomNavigationBarItem(
               icon: Container(
                   width: bottomBarWidth,
@@ -89,7 +95,7 @@ class _AdminScreenState extends State<AdminScreen> {
                                   : GlobalVariables.backgroundColor,
                               width: bottomBarBorderWidth))),
                   child: const Icon(Icons.analytics_outlined)),
-              label: ''),
+              label: 'Analytics'),
           BottomNavigationBarItem(
               icon: Container(
                   width: bottomBarWidth,
@@ -101,7 +107,7 @@ class _AdminScreenState extends State<AdminScreen> {
                                   : GlobalVariables.backgroundColor,
                               width: bottomBarBorderWidth))),
                   child: const Icon(Icons.all_inbox_outlined)),
-              label: ''),
+              label: 'Inbox'),
         ],
       ),
     );

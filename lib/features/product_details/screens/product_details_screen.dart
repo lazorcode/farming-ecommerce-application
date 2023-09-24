@@ -150,37 +150,48 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(
-                vertical: 20,
-                horizontal: 10,
-              ),
+              padding: const EdgeInsets.only(top: 10, left: 13, right: 10),
               child: Text(
                 widget.product.name,
-                style: const TextStyle(
-                  fontSize: 15,
-                ),
+                style:
+                    const TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
               ),
             ),
-            CarouselSlider(
-              items: widget.product.images.map(
-                (i) {
-                  return Builder(
-                    builder: (BuildContext context) => Image.network(
-                      i,
-                      fit: BoxFit.cover,
-                      height: 200,
-                    ),
-                  );
-                },
-              ).toList(),
-              options: CarouselOptions(
-                viewportFraction: 1,
-                height: 240,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(color: Colors.black12)),
+                child: CarouselSlider(
+                  items: widget.product.images.map(
+                    (i) {
+                      return Builder(
+                        builder: (BuildContext context) => Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: Image.network(
+                              i,
+                              fit: BoxFit.cover,
+                              width: double.infinity,
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  ).toList(),
+                  options: CarouselOptions(
+                    autoPlay: true,
+                    viewportFraction: 1,
+                    height: 240,
+                  ),
+                ),
               ),
             ),
             Container(
               color: Colors.black12,
-              height: 5,
+              height: 2,
             ),
             Padding(
               padding: const EdgeInsets.all(8),
@@ -195,9 +206,9 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                   children: [
                     TextSpan(
                       text: '\$${widget.product.price}',
-                      style: const TextStyle(
-                        fontSize: 22,
-                        color: Color.fromARGB(248, 58, 138, 129),
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: GlobalVariables.selectedNavBarColor,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -206,45 +217,52 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(widget.product.description),
+              padding: const EdgeInsets.only(left: 8, right: 8, bottom: 8),
+              child: Text(
+                widget.product.description,
+                style:
+                    const TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
+              ),
             ),
             Container(
               color: Colors.black12,
-              height: 5,
+              height: 2,
             ),
-            Padding(
-              padding: const EdgeInsets.all(10),
-              child: Center(
-                child: CustomButton(
-                  text: 'Buy Now',
-                  onTap: () {},
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Center(
+                    child: CustomButton(
+                      text: 'Buy Now',
+                      onTap: () {},
+                    ),
+                  ),
                 ),
-              ),
-            ),
-            const SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.all(10),
-              child: Center(
-                child: CustomButton(
-                  text: 'Add to Cart',
-                  onTap: addToCart,
-                  color: Color.fromARGB(255, 42, 124, 102),
+                Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Center(
+                    child: CustomButton(
+                      text: 'Add to Cart',
+                      onTap: addToCart,
+                      color: GlobalVariables.secondaryColor,
+                    ),
+                  ),
                 ),
-              ),
+              ],
             ),
-            const SizedBox(height: 10),
             Container(
               color: Colors.black12,
-              height: 5,
+              height: 2,
             ),
             const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10.0),
+              padding: EdgeInsets.all(10.0),
               child: Center(
                 child: Text(
                   'Rate The Product',
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -257,11 +275,11 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                 direction: Axis.horizontal,
                 allowHalfRating: true,
                 itemCount: 5,
-                itemSize: 35,
+                itemSize: 30,
                 itemPadding: const EdgeInsets.symmetric(horizontal: 4),
                 itemBuilder: (context, _) => const Icon(
                   Icons.star,
-                  color: Color.fromARGB(255, 236, 205, 24),
+                  color: GlobalVariables.ratingcolor,
                 ),
                 onRatingUpdate: (rating) {
                   productDetailsServices.rateProduct(
@@ -272,7 +290,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                 },
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             )
           ],

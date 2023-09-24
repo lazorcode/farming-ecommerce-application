@@ -100,16 +100,12 @@ class _CartScreenState extends State<CartScreen> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: CustomButton(
-                color: Color.fromARGB(255, 62, 191, 165),
+                color: GlobalVariables.secondaryColor,
                 text: 'Proceed to Buy (${user.cart.length} items)',
                 onTap: () => navigateToAddress(sum),
               ),
             ),
             const SizedBox(height: 15),
-            Container(
-              color: Colors.black12.withOpacity(0.08),
-              height: 1,
-            ),
             const SizedBox(height: 5),
             ListView.builder(
               physics: const NeverScrollableScrollPhysics(),

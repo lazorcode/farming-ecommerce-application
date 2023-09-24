@@ -11,22 +11,25 @@ class TopButtons extends StatelessWidget {
       children: [
         Row(
           children: [
-            AccountButton(text: 'Your Orders', onTap: () {}),
+            AccountButton(
+                text: 'Log Out',
+                onTap: () => AccountServices().logOut(context)),
+            // AccountButton(text: 'Your Orders', onTap: () {}),
             AccountButton(text: 'Turn Seller', onTap: () {})
           ],
         ),
         // ignore: prefer_const_constructors
-        SizedBox(
-          height: 10,
-        ),
-        Row(
-          children: [
-            AccountButton(
-                text: 'Log Out',
-                onTap: () => AccountServices().logOut(context)),
-            AccountButton(text: 'Your Wishlist', onTap: () {}),
-          ],
-        ),
+        // SizedBox(
+        //   height: 10,
+        // ),
+        // Row(
+        //   children: [
+        //     AccountButton(
+        //         text: 'Log Out',
+        //         onTap: () => AccountServices().logOut(context)),
+        //     AccountButton(text: 'Your Wishlist', onTap: () {}),
+        //   ],
+        // ),
       ],
     );
   }
