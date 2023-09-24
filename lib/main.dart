@@ -35,6 +35,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
+        fontFamily: "campton",
         scaffoldBackgroundColor: GlobalVariables.backgroundColor,
         colorScheme:
             const ColorScheme.light(primary: GlobalVariables.secondaryColor),
