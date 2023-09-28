@@ -18,8 +18,8 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-// const DB = "mongodb+srv://ialock9876:7525874797@cluster0.jy6nupk.mongodb.net/?retryWrites=true&w=majority";
-const DB = "mongodb://localhost:27017/alfas";
+const DB = "mongodb+srv://ialock9876:7525874797@cluster0.jy6nupk.mongodb.net/?retryWrites=true&w=majority";
+// const DB = "mongodb://localhost:27017/alfas";
 
 app.use(express.json());
 app.use(authRouter);
