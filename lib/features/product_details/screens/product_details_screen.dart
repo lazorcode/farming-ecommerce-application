@@ -141,7 +141,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    widget.product.id!,
+                    'Id- ${widget.product.id!}',
                   ),
                   Stars(
                     rating: avgRating,
@@ -199,6 +199,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                 text: TextSpan(
                   text: 'Deal Price: ',
                   style: const TextStyle(
+                    fontFamily: "campton",
                     fontSize: 16,
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
@@ -220,8 +221,10 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               padding: const EdgeInsets.only(left: 8, right: 8, bottom: 8),
               child: Text(
                 widget.product.description,
-                style:
-                    const TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
+                style: const TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w200,
+                    color: Colors.black54),
               ),
             ),
             Container(

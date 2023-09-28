@@ -9,14 +9,17 @@ class TopButtons extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(
-          children: [
-            AccountButton(
-                text: 'Log Out',
-                onTap: () => AccountServices().logOut(context)),
-            // AccountButton(text: 'Your Orders', onTap: () {}),
-            AccountButton(text: 'Turn Seller', onTap: () {})
-          ],
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 50),
+          child: Row(
+            children: [
+              AccountButton(
+                  text: 'Log Out',
+                  onTap: () => AccountServices().logOut(context)),
+              // AccountButton(text: 'Your Orders', onTap: () {}),
+              // AccountButton(text: 'Turn Seller', onTap: () {})
+            ],
+          ),
         ),
         // ignore: prefer_const_constructors
         // SizedBox(

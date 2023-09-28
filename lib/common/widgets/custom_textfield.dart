@@ -12,15 +12,18 @@ class CustomTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
+      height: 50,
       child: TextFormField(
         controller: controller,
         decoration: InputDecoration(
+          contentPadding: EdgeInsets.zero.copyWith(left: 10),
           hintText: hintText,
-          border:
-              OutlineInputBorder(borderSide: BorderSide(color: Colors.black38)),
-          enabledBorder:
-              OutlineInputBorder(borderSide: BorderSide(color: Colors.black38)),
+          border: const OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.black38),
+          ),
+          enabledBorder: const OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.black38)),
         ),
         validator: (val) {
           if (val == null || val.isEmpty) {

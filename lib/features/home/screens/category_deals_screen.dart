@@ -93,6 +93,7 @@ class _CategoryDealsScreenState extends State<CategoryDealsScreen> {
                           children: [
                             SizedBox(
                               height: 130,
+                              width: 130,
                               child: DecoratedBox(
                                 decoration: BoxDecoration(
                                   border: Border.all(
@@ -101,9 +102,13 @@ class _CategoryDealsScreenState extends State<CategoryDealsScreen> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsets.all(10),
-                                  child: Image.network(
-                                    product.images[0],
+                                  padding: const EdgeInsets.all(5),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(5),
+                                    child: Image.network(
+                                      product.images[0],
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ),
                               ),

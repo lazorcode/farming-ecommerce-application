@@ -1,4 +1,5 @@
 import 'package:ecommerce/common/widgets/loader.dart';
+import 'package:ecommerce/constants/global_variables.dart';
 import 'package:ecommerce/features/home/services/home_services.dart';
 import 'package:ecommerce/features/product_details/screens/product_details_screen.dart';
 import 'package:ecommerce/models/product.dart';
@@ -66,6 +67,7 @@ class _DealOfDayState extends State<DealOfDay> {
                             child: Image.network(
                               product!.images[0],
                               height: 215,
+                              width: double.infinity,
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -130,9 +132,9 @@ class _DealOfDayState extends State<DealOfDay> {
                       ).copyWith(left: 15),
                       alignment: Alignment.topLeft,
                       child: Text(
-                        'See all deals',
+                        'See all details',
                         style: TextStyle(
-                          color: Colors.cyan[800],
+                          color: GlobalVariables.selectedNavBarColor,
                         ),
                       ),
                     ),

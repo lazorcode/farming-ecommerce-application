@@ -2,6 +2,7 @@ import 'package:ecommerce/common/widgets/loader.dart';
 import 'package:ecommerce/features/admin/models/sales.dart';
 import 'package:ecommerce/features/admin/services/admin_services.dart';
 import 'package:ecommerce/features/admin/widgets/category_products_chart.dart';
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
 class AnalyticsScreen extends StatefulWidget {
@@ -44,16 +45,16 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
               ),
               SizedBox(
                 height: 250,
-                child: CategoryProductsChart(
-                    //   seriesList: [
-                    //   charts.Series(
-                    //     id: 'Sales',
-                    //     data: earnings!,
-                    //     domainFn: (Sales sales, _) => sales.label,
-                    //     measureFn: (Sales sales, _) => sales.earning,
-                    //   ),
-                    // ]
-                    ),
+                // child: BarChart(
+                //       seriesList: [
+                //       charts.Series(
+                //         id: 'Sales',
+                //         data: earnings!,
+                //         domainFn: (Sales sales, _) => sales.label,
+                //         measureFn: (Sales sales, _) => sales.earning,
+                //       ),
+                //     ]
+                //     ),
               )
             ],
           );
