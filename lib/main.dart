@@ -1,10 +1,11 @@
 import 'package:ecommerce/common/widgets/bottom_bar.dart';
 import 'package:ecommerce/constants/global_variables.dart';
+import 'package:ecommerce/constants/onboarding/onboarding_screens.dart';
 import 'package:ecommerce/features/admin/screens/admin_screen.dart';
-import 'package:ecommerce/features/auth/screens/auth_screen.dart';
 import 'package:ecommerce/features/auth/services/auth_service.dart';
 import 'package:ecommerce/providers/user_provider.dart';
 import 'package:ecommerce/router.dart';
+import 'package:ecommerce/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -22,11 +23,21 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  bool showingSplash = true;
+  LoadHome() {
+    Future.delayed(const Duration(seconds: 3), () {
+      setState(() {
+        showingSplash = false;
+      });
+    });
+  }
+
   final AuthService authService = AuthService();
   @override
   void initState() {
     super.initState();
     authService.getUserData(context);
+    LoadHome();
   }
 
   @override
@@ -44,11 +55,15 @@ class _MyAppState extends State<MyApp> {
         useMaterial3: true,
       ),
       onGenerateRoute: (settings) => generateRoute(settings),
-      home: Provider.of<UserProvider>(context).user.token.isNotEmpty
-          ? Provider.of<UserProvider>(context).user.type == 'user'
-              ? const BottomBar()
-              : const AdminScreen()
-          : const AuthScreen(),
+      home: showingSplash
+          ? const SplashScreen()
+          : Provider.of<UserProvider>(context).user.token.isNotEmpty
+              ? Provider.of<UserProvider>(context).user.type == 'user'
+                  ? const BottomBar()
+                  : const AdminScreen()
+
+              // : const AuthScreen()
+              : const OnboardingScreen(),
     );
   }
 }

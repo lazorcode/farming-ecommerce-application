@@ -1,4 +1,5 @@
 import 'package:ecommerce/common/widgets/bottom_bar.dart';
+import 'package:ecommerce/constants/onboarding/onboarding_screens.dart';
 import 'package:ecommerce/features/address/screens/address_screen.dart';
 import 'package:ecommerce/features/admin/screens/add_product_screen.dart';
 import 'package:ecommerce/features/auth/screens/auth_screen.dart';
@@ -64,6 +65,9 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
           order: order,
         ),
       );
+    case OnboardingScreen.routeName:
+      return MaterialPageRoute(
+          settings: routeSettings, builder: (_) => const OnboardingScreen());
 
     default:
       return MaterialPageRoute(

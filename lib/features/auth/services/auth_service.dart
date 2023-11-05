@@ -1,4 +1,4 @@
-// ignore_for_file: use_build_context_synchronously
+
 
 import 'dart:convert';
 
@@ -46,6 +46,7 @@ class AuthService {
             showSnackBar(context,
                 'Account has been created , Login with same crediatial');
           });
+
     } catch (e) {
       showSnackBar(context, e.toString());
     }

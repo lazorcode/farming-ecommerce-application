@@ -48,41 +48,48 @@ class _PostsScreenState extends State<PostsScreen> {
     return products == null
         ? const Loader()
         : Scaffold(
-            body: GridView.builder(
-              itemCount: products!.length,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2),
-              itemBuilder: (context, index) {
-                final productData = products![index];
-                return Column(
-                  children: [
-                    SizedBox(
-                      height: 130,
-                      child: SingleProduct(
-                        image: productData.images[0],
+            body: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
+              child: GridView.builder(
+                itemCount: products!.length,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2),
+                itemBuilder: (context, index) {
+                  final productData = products![index];
+                  return Column(
+                    children: [
+                      SizedBox(
+                        height: 130,
+                        child: SingleProduct(
+                          image: productData.images[0],
+                        ),
                       ),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Expanded(
-                          child: Text(
-                            productData.name,
-                            overflow: TextOverflow.ellipsis,
-                            maxLines: 2,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Expanded(
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 5),
+                              child: Text(
+                                productData.name,
+                                overflow: TextOverflow.ellipsis,
+                                maxLines: 2,
+                              ),
+                            ),
                           ),
-                        ),
-                        IconButton(
-                          onPressed: () => deleteProduct(productData, index),
-                          icon: const Icon(
-                            Icons.delete_outline,
+                          IconButton(
+                            onPressed: () => deleteProduct(productData, index),
+                            icon: const Icon(
+                              Icons.delete_outline,
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                  ],
-                );
-              },
+                        ],
+                      ),
+                    ],
+                  );
+                },
+              ),
             ),
             floatingActionButton: FloatingActionButton(
               shape: const CircleBorder(),

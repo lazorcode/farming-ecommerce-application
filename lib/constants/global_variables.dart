@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-String uri = 'http://192.168.135.28:3000';
+// String uri = 'http://192.168.135.28:3000';
+String uri = 'https://alfas.onrender.com';
 // String uri = 'http://localhost:3000';
 
 class GlobalVariables {
@@ -13,6 +14,9 @@ class GlobalVariables {
   );
 
   static const secondaryColor = Color(0xff48AF9C);
+  static const lightgreen = Color(0xffEDF9EB);
+  static const darkgreen = Color(0xffA6D2AE);
+
   static const ratingcolor = Color(0xffFDCC0D);
   static const addressboxcolor = Color(0xff17364B);
   static const backgroundColor = Colors.white;

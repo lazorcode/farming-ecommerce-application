@@ -21,9 +21,9 @@ class AccountScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                    alignment: Alignment.topLeft,
+                    alignment: Alignment.center,
                     child: Image.asset(
-                      'assets/images/alfas2.png',
+                      'assets/images/icon.png',
                       width: 120,
                       height: 55,
                       color: Colors.black,
@@ -36,7 +36,7 @@ class AccountScreen extends StatelessWidget {
                         padding: EdgeInsets.only(right: 15),
                         child: Icon(Icons.notifications_outlined),
                       ),
-                      Icon(Icons.search)
+                      // Icon(Icons.search)
                     ],
                   ),
                 )

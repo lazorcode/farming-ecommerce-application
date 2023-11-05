@@ -47,10 +47,21 @@ dependencies:
   pay: ^1.1.2
   intl: any
   fl_chart: ^0.63.0
+  smooth_page_indicator: ^1.1.0
+  webview_flutter: ^3.0.4
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_native_splash: ^2.3.5
+flutter_native_splash:
+  android: true
+  ios: true
+  web: false
+
+  color: "EDF9EB"
+  image: assets/images/icon.png  
+  
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

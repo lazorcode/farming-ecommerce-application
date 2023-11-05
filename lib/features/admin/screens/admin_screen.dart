@@ -1,7 +1,4 @@
 import 'package:ecommerce/constants/global_variables.dart';
-import 'package:ecommerce/features/account/services/account_services.dart';
-import 'package:ecommerce/features/account/widgets/account_button.dart';
-import 'package:ecommerce/features/account/widgets/top_buttons.dart';
 import 'package:ecommerce/features/admin/screens/analytics_screen.dart';
 import 'package:ecommerce/features/admin/screens/orders_screen.dart';
 import 'package:ecommerce/features/admin/screens/posts_screen.dart';
@@ -46,14 +43,11 @@ class _AdminScreenState extends State<AdminScreen> {
                 Container(
                     alignment: Alignment.topLeft,
                     child: Image.asset(
-                      'assets/images/alfas2.png',
+                      'assets/images/icon.png',
                       width: 120,
                       height: 55,
                       color: Colors.black,
                     )),
-                AccountButton(
-                    text: 'Log Out',
-                    onTap: () => AccountServices().logOut(context)),
                 const Text(
                   'Admin',
                   style: TextStyle(
