@@ -13,11 +13,11 @@ class TopCategories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 72,
+      height: 80,
       child: ListView.builder(
         itemCount: GlobalVariables.categoryImages.length,
         scrollDirection: Axis.horizontal,
-        itemExtent: 80,
+        itemExtent: 86,
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () => navigateToCategoryPage(
@@ -36,8 +36,8 @@ class TopCategories extends StatelessWidget {
                     child: Image.asset(
                       GlobalVariables.categoryImages[index]['image']!,
                       fit: BoxFit.cover,
-                      height: 50,
-                      width: 60,
+                      height: 57,
+                      width: 67,
                     ),
                   ),
                 ),

@@ -89,7 +89,7 @@ class _AdminScreenState extends State<AdminScreen> {
                                   : GlobalVariables.backgroundColor,
                               width: bottomBarBorderWidth))),
                   child: const Icon(Icons.analytics_outlined)),
-              label: 'Analytics'),
+              label: 'Learnings'),
           BottomNavigationBarItem(
               icon: Container(
                   width: bottomBarWidth,

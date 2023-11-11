@@ -234,15 +234,15 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: Center(
-                    child: CustomButton(
-                      text: 'Buy Now',
-                      onTap: () {},
-                    ),
-                  ),
-                ),
+                // Padding(
+                //   padding: const EdgeInsets.all(10),
+                //   child: Center(
+                //     child: CustomButton(
+                //       text: 'Buy Now',
+                //       onTap: () {},
+                //     ),
+                //   ),
+                // ),
                 Padding(
                   padding: const EdgeInsets.all(10),
                   child: Center(

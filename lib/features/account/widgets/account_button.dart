@@ -1,3 +1,4 @@
+import 'package:ecommerce/constants/global_variables.dart';
 import 'package:flutter/material.dart';
 
 class AccountButton extends StatelessWidget {
@@ -19,14 +20,14 @@ class AccountButton extends StatelessWidget {
             color: Colors.white),
         child: OutlinedButton(
             style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.black12.withOpacity(0.03),
+                backgroundColor: GlobalVariables.addressboxcolor,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(50))),
             onPressed: onTap,
             child: Text(
               text,
               style: const TextStyle(
-                  color: Colors.black, fontWeight: FontWeight.normal),
+                  color: Colors.white, fontWeight: FontWeight.normal),
             )),
       ),
     );

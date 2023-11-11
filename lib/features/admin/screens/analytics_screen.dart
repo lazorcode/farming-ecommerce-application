@@ -1,5 +1,7 @@
+import 'package:ecommerce/constants/global_variables.dart';
 import 'package:ecommerce/features/account/services/account_services.dart';
 import 'package:ecommerce/features/account/widgets/account_button.dart';
+import 'package:ecommerce/features/account/widgets/top_buttons.dart';
 import 'package:ecommerce/features/admin/screens/detailview.dart';
 import 'package:ecommerce/features/admin/services/admin_services.dart';
 import 'package:flutter/material.dart';
@@ -56,37 +58,83 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
     //                 ),
     //           ),
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15),
+      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
       child: Column(
         children: [
           ClipRRect(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(20),
             child: Image.asset(
               // 'assets/images/icon.png',
               'assets/images/learnings.png',
-              width: 270,
-              height: 230,
+              width: 250,
+              height: 210,
               fit: BoxFit.cover,
             ),
           ),
-          Center(
-            child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => DetailViewScreen(
-                              newsUrl: 'https://www.youtube.com/')));
-                },
-                child: const Text('Start Learning')),
+          SizedBox(
+            height: 10,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => DetailViewScreen(
+                                newsUrl:
+                                    'https://www.youtube.com/results?search_query=farming+technology+in+india')));
+                  },
+                  child: const Text('Visual Learnings')),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => DetailViewScreen(
+                                newsUrl:
+                                    'https://www.jiva.ag/blog/what-are-the-most-common-problems-and-challenges-that-farmers-face')));
+                  },
+                  child: const Text('Text Learnings')),
+            ],
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailViewScreen(
+                    newsUrl: 'https://kisansuvidha.gov.in/',
+                  ),
+                ),
+              );
+            },
+            style: ElevatedButton.styleFrom(
+              side: BorderSide(
+                color: Colors.black, // Black border
+                width: 2,
+              ),
+            ),
+            child: Text(
+              'Kisan Support',
+              style: TextStyle(
+                color: GlobalVariables.addressboxcolor, // Dark blue text color
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ),
           const Spacer(),
-          SizedBox(
-            height: 45,
-            child: AccountButton(
-                text: 'Log Out',
-                onTap: () => AccountServices().logOut(context)),
-          ),
+          TopButtons(),
+          // SizedBox(
+          //   height: 45,
+          //   child: AccountButton(
+          //       text: 'Log Out',
+          //       onTap: () => AccountServices().logOut(context)),
+          // ),
           const SizedBox(
             height: 25,
           )

@@ -54,10 +54,10 @@ class _AuthScreenState extends State<AuthScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: GlobalVariables.darkgreen,
+      backgroundColor: GlobalVariables.lightgreen,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(20.0),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -85,20 +85,37 @@ class _AuthScreenState extends State<AuthScreen> {
                   ],
                 ),
                 Center(
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(500),
-                    child: Image.asset(
-                      // 'assets/images/icon.png',
-                      'assets/images/auth.png',
-                      width: 150,
-                      height: 150,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(500),
+                      border: Border.all(
+                        color: Colors.black26,
+                        width:
+                            2, // You can adjust the width of the border as needed
+                      ),
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(500),
+                      child: Image.asset(
+                        'assets/images/auth.png',
+                        width: 150,
+                        height: 150,
+                      ),
                     ),
                   ),
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 20,
                 ),
                 ListTile(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(
+                          10.0), // Adjust the top-left radius as needed
+                      topRight: Radius.circular(
+                          10.0), // Adjust the top-right radius as needed
+                    ),
+                  ),
                   tileColor: _auth == Auth.signup
                       ? GlobalVariables.secondaryColor
                       : GlobalVariables.lightgreen,
@@ -122,7 +139,15 @@ class _AuthScreenState extends State<AuthScreen> {
                 if (_auth == Auth.signup)
                   Container(
                     padding: const EdgeInsets.all(8),
-                    color: GlobalVariables.lightgreen,
+                    decoration: BoxDecoration(
+                      color: GlobalVariables.lightgreen,
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(
+                            10.0), // Adjust the bottom-left radius as needed
+                        bottomRight: Radius.circular(
+                            10.0), // Adjust the bottom-right radius as needed
+                      ),
+                    ),
                     child: Form(
                       key: _signUpFormKey,
                       child: Column(
@@ -156,6 +181,14 @@ class _AuthScreenState extends State<AuthScreen> {
                     ),
                   ),
                 ListTile(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(
+                          10.0), // Adjust the top-left radius as needed
+                      topRight: Radius.circular(
+                          10.0), // Adjust the top-right radius as needed
+                    ),
+                  ),
                   tileColor: _auth == Auth.signin
                       ? GlobalVariables.secondaryColor
                       : GlobalVariables.lightgreen,
@@ -179,7 +212,15 @@ class _AuthScreenState extends State<AuthScreen> {
                 if (_auth == Auth.signin)
                   Container(
                     padding: const EdgeInsets.all(8),
-                    color: GlobalVariables.lightgreen,
+                    decoration: BoxDecoration(
+                      color: GlobalVariables.lightgreen,
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(
+                            10.0), // Adjust the bottom-left radius as needed
+                        bottomRight: Radius.circular(
+                            10.0), // Adjust the bottom-right radius as needed
+                      ),
+                    ),
                     child: Form(
                       key: _signInFormKey,
                       child: Column(
@@ -206,7 +247,7 @@ class _AuthScreenState extends State<AuthScreen> {
                         ],
                       ),
                     ),
-                  ),
+                  )
               ],
             ),
           ),

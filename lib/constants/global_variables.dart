@@ -19,7 +19,7 @@ class GlobalVariables {
 
   static const ratingcolor = Color(0xffFDCC0D);
   static const addressboxcolor = Color(0xff17364B);
-  static const backgroundColor = Colors.white;
+  static const backgroundColor = Color(0xffEDF9EB);
   static const Color greyBackgroundCOlor = Color(0xffebecee);
   static var selectedNavBarColor = const Color(0xff2E7D67);
   static const unselectedNavBarColor = Colors.black87;

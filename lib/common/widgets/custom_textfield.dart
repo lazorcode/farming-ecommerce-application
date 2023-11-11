@@ -19,11 +19,16 @@ class CustomTextField extends StatelessWidget {
         decoration: InputDecoration(
           contentPadding: EdgeInsets.zero.copyWith(left: 10),
           hintText: hintText,
-          border: const OutlineInputBorder(
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(
+                12.0), // Adjust the border radius as needed
             borderSide: BorderSide(color: Colors.black38),
           ),
-          enabledBorder: const OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.black38)),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(
+                7.0), // Adjust the border radius as needed
+            borderSide: BorderSide(color: Colors.black38),
+          ),
         ),
         validator: (val) {
           if (val == null || val.isEmpty) {

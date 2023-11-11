@@ -1,4 +1,5 @@
 import 'package:ecommerce/features/cart/services/cart_services.dart';
+import 'package:ecommerce/features/product_details/screens/product_details_screen.dart';
 import 'package:ecommerce/features/product_details/services/product_details_services.dart';
 import 'package:ecommerce/models/product.dart';
 import 'package:ecommerce/providers/user_provider.dart';
@@ -55,19 +56,28 @@ class _CartProductState extends State<CartProduct> {
               padding: const EdgeInsets.only(top: 8, left: 8, bottom: 1),
               child: Row(
                 children: [
-                  Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8),
-                        border: Border.all(color: Colors.black12)),
-                    child: Padding(
-                      padding: const EdgeInsets.all(5.0),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(8),
-                        child: Image.network(
-                          product.images[0],
-                          fit: BoxFit.cover,
-                          height: 120,
-                          width: 120,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(
+                        context,
+                        ProductDetailScreen.routeName,
+                        arguments: product,
+                      );
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          border: Border.all(color: Colors.black12)),
+                      child: Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(8),
+                          child: Image.network(
+                            product.images[0],
+                            fit: BoxFit.cover,
+                            height: 120,
+                            width: 120,
+                          ),
                         ),
                       ),
                     ),
