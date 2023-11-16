@@ -61,6 +61,7 @@ class _PostsScreenState extends State<PostsScreen> {
                   final productData = products![index];
                   return Container(
                     decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(7),
                         border: Border.all(color: Colors.black26)),
                     child: Column(
                       children: [
@@ -96,6 +97,7 @@ class _PostsScreenState extends State<PostsScreen> {
                         Text(
                           '\$${productData.price}',
                           overflow: TextOverflow.ellipsis,
+                          style: TextStyle(fontWeight: FontWeight.bold),
                         )
                       ],
                     ),

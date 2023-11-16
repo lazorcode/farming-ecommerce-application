@@ -61,14 +61,22 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
       child: Column(
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(20),
-            child: Image.asset(
-              // 'assets/images/icon.png',
-              'assets/images/learnings.png',
-              width: 250,
-              height: 210,
-              fit: BoxFit.cover,
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              border: Border.all(
+                color: Colors.black12,
+                width: 2, // You can adjust the width of the border as needed
+              ),
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Image.asset(
+                'assets/images/learnings.png',
+                width: 250,
+                height: 210,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           SizedBox(
